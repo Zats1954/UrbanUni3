@@ -7,6 +7,10 @@ android {
     namespace = "ru.zatsoft.lessonmark"
     compileSdk = 34
 
+    buildFeatures{
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "ru.zatsoft.lessonmark"
         minSdk = 24
