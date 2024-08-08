@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">LessonMark</string>
+    <string name="random_digit">Случайное число</string>
+    <string name="mark">Оценка за урок</string>
 </resources>
