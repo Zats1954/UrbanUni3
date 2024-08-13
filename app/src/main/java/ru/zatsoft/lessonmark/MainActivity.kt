@@ -11,14 +11,17 @@ import ru.zatsoft.lessonmark.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private lateinit var toolBar: Toolbar
     private lateinit var callView: View
-
+    private lateinit var toolBar: Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        toolBar = binding.toolbarMain
+        setSupportActionBar( toolBar)
+        title = " "
+        registerForContextMenu(binding.toolbarMain)
         registerForContextMenu(binding.etMark)
         registerForContextMenu(binding.tvRandom)
     }
@@ -38,7 +41,7 @@ class MainActivity : AppCompatActivity() {
     override fun onContextItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.change_color -> {
-                if (callView == binding.etMark) {
+                if (callView == binding.etMark || callView == binding.toolbarMain) {
                     setColorEditText()
                 } else if(callView == binding.tvRandom) {
                     setColorTextView()
